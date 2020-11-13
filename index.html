@@ -14,7 +14,7 @@
     if(totalhours>0)o.push(totalhours-totaldays*24 + " hours")
     if(totalminutes>0)o.push(totalminutes-totalhours*60 + " minutes")
     if(totalseconds>0)o.push(totalseconds-totalminutes*60 + " seconds")
-    o.push((d % 100) +  " milliseconds")
+    o.push((d % 1000) +  " milliseconds")
     document.getElementById("timeoutput").innerText = o.join(" ")
   }
   window.addEventListener('load',function() {
