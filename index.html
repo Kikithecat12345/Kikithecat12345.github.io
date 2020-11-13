@@ -1,0 +1,29 @@
+<html>
+
+<head>
+  <title>Countdown to 19th April 2021</title>
+  <script>
+  function refresh() {
+    let d = new Date(2021,3,19) - new Date()
+    let totalseconds=Math.floor(d/1000)
+    let totalminutes=Math.floor(totalseconds/60)
+    let totalhours=Math.floor(totalminutes/60)
+    let totaldays=Math.floor(totalhours/24)
+    let o=[]
+    if(totaldays>0)o.push(totaldays + " days")
+    if(totalhours>0)o.push(totalhours-totaldays*24 + " hours")
+    if(totalminutes>0)o.push(totalminutes-totalhours*24 + " minutes")
+    if(totalseconds>0)o.push(totalseconds-totalminutes*24 + " seconds")
+    document.getElementById("timeoutput").innerText = o.join(" ")
+  }
+  document.addEventListener('load',function() {
+    setInterval(refresh,100)
+  })
+  </script>
+</head>
+
+<body>
+  <span id="timeoutput"></span>
+</body>
+
+</html>
