@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 
 <head>
@@ -13,11 +12,11 @@
     let o=[]
     if(totaldays>0)o.push(totaldays + " days")
     if(totalhours>0)o.push(totalhours-totaldays*24 + " hours")
-    if(totalminutes>0)o.push(totalminutes-totalhours*24 + " minutes")
-    if(totalseconds>0)o.push(totalseconds-totalminutes*24 + " seconds")
+    if(totalminutes>0)o.push(totalminutes-totalhours*60 + " minutes")
+    if(totalseconds>0)o.push(totalseconds-totalminutes*60 + " seconds")
     document.getElementById("timeoutput").innerText = o.join(" ")
   }
-  document.addEventListener('load',function() {
+  window.addEventListener('load',function() {
     setInterval(refresh,100)
   })
   </script>
